@@ -40,17 +40,6 @@ CREATE TABLE `capitulos` (
 -- Volcado de datos para la tabla `capitulos`
 --
 
-INSERT INTO `capitulos` (`id_capitulo`, `c_nombre`, `c_fk_Servidor`, `c_url`, `c_urlEncriptada`, `c_fk_id_temporada`) VALUES
-(8, 'Capitulos 02 - 02 ', 1, 'https://mega.nz/folder/MZ4VAbiB#qdpT7tUPp17zA4Vqstv8Mg', 'https://ouo.io/0Jgylf', 12),
-(9, 'Capitulo 1 - 6', 2, 'http://www.mediafire.com/folder/24my9xglxfd9l/Ahiru%20no%20sora%201%20-%206', 'https://ouo.io/xpFZI1', 14),
-(10, 'Capitulo 7 - 10', 2, 'http://www.mediafire.com/folder/k9lu0vbd3qnl3/cap7-10', 'https://ouo.io/9Xg2R7', 14),
-(11, 'Capitulo 11 - 20', 2, 'http://www.mediafire.com/folder/7b7ts9n28zvr6/cap%2011-20', 'https://ouo.io/0q07xU', 14),
-(12, 'Capitulo 21', 2, 'http://www.mediafire.com/folder/c4uwqojh416ka/Ahiru%20no%20sora%2021', 'https://ouo.io/SPnR4S', 14),
-(13, 'Capitulo 22 - 24', 2, 'http://www.mediafire.com/folder/l4vi6y1lbfytu/Capitulo%2022%20-%2024', 'https://ouo.io/fxlXfyC', 14),
-(14, 'Capitulo 25 - 47', 1, 'https://mega.nz/folder/HYhx2IaT#SqQFW8BtbzuNpYVkfbltLw', 'https://ouo.io/chtvXg', 14);
-
--- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `categoria`
 --
@@ -63,11 +52,6 @@ CREATE TABLE `categoria` (
 --
 -- Volcado de datos para la tabla `categoria`
 --
-
-INSERT INTO `categoria` (`id_categoria`, `ce_nombre`) VALUES
-(1, 'Anime H'),
-(4, 'Shonen'),
-(5, 'Escolar H');
 
 -- --------------------------------------------------------
 
@@ -83,10 +67,6 @@ CREATE TABLE `estatus` (
 --
 -- Volcado de datos para la tabla `estatus`
 --
-
-INSERT INTO `estatus` (`id_estatus`, `e_nombre`) VALUES
-(1, 'Emision'),
-(2, 'Finalizado');
 
 -- --------------------------------------------------------
 
@@ -107,11 +87,6 @@ CREATE TABLE `series` (
 -- Volcado de datos para la tabla `series`
 --
 
-INSERT INTO `series` (`id_serie`, `s_nombre`, `s_descripcion`, `s_imagen`, `s_pathimagen`, `s_fk_id_categoria`) VALUES
-(15, 'Temporada 32', 'fvfdvbfd asdasd', 'Meikoku Gakuen Jutai Hen.jpg', 'Asset/imagenes/Meikoku Gakuen Jutai Hen.jpg', 4),
-(16, 'Temporada 2', 'asdasd', 'Miboujin Nikki Akogare no Ano Hito to Hitotsu Yane no Shita.jpg', 'Asset/imagenes/Miboujin Nikki Akogare no Ano Hito to Hitotsu Yane no Shita.jpg', 1),
-(17, 'Ahiru no sora', 'Ahiru no Sora es una serie de manga escrita e ilustrada por Takeshi Hinata, serializada en la revista semanal Shōnen Magazine desde diciembre de 2003. El primer tomo recopilatorio fue lanzado el 17 de mayo de 2004, y hasta septiembre de 2019, Kōdansha ha publicado cincuenta volúmenes en Japón.', 'ahiru.jpg', 'Asset/imagenes/ahiru.jpg', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -129,11 +104,6 @@ CREATE TABLE `servidor` (
 -- Volcado de datos para la tabla `servidor`
 --
 
-INSERT INTO `servidor` (`id_servidor`, `se_nombre`, `se_imagen`, `se_dir_imagen`) VALUES
-(1, 'Mega', 'mega.png', 'Asset/imagenes/mega.png'),
-(2, 'Mediafire', 'Mediafire_Logo.png', 'Asset/imagenes/Mediafire_Logo.png'),
-(6, 'Temporada 1a', 'banner.jpg', 'Asset/imagenes/banner.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -150,11 +120,6 @@ CREATE TABLE `temporadas` (
 --
 -- Volcado de datos para la tabla `temporadas`
 --
-
-INSERT INTO `temporadas` (`id_temporada`, `t_nombre`, `t_fk_id_serie`, `t_fk_id_estatus`) VALUES
-(12, 'Temporada 1', 16, 2),
-(13, 'Temporada 2', 16, 2),
-(14, 'Temporada 1', 17, 2);
 
 --
 -- Índices para tablas volcadas
