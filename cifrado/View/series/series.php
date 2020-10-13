@@ -18,7 +18,7 @@
                     <th scope="row"><?= $row['id_serie']?></th>
                     <td><?= $row['s_nombre']?></td>
                     <td><?= $row['s_descripcion']?></td>
-                    <td><img style="width: 200px; height=200px;" class="img-thumbnail" src="<?= inicio.$row['s_pathimagen']?>" alt=""></td>
+                    <td><img style="width: 200px; height=200px;" class="img-thumbnail" src="../<?= $row['s_pathimagen']?>" alt=""></td>
                     <td><?= $this->model->getFknamecategoria($row['s_fk_id_categoria'])?></td>
                     <td class="acciones">
                         <a href="index.php?c=series&a=view&id=<?= $row['id_serie'] ?>" class="btn btn-primary">Ver</a>

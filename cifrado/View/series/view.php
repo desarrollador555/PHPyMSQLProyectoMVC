@@ -18,7 +18,7 @@
                     <th scope="col">Nombre</th><td><?= $serie['s_nombre']?></td>
                 </tr>
                 <tr>
-                    <th scope="col">Imagen</th><td><img style="height:500px;" class="" src="<?= inicio.$serie['s_pathimagen']?>" alt=""></td>
+                    <th scope="col">Imagen</th><td><img style="height:400px;" class="" src="../<?= $serie['s_pathimagen']?>" alt=""></td>
                 </tr>
                 <tr>
                     <th scope="col">Descripcion</th><td><?= $serie['s_descripcion']?></td>

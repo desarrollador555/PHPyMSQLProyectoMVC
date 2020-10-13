@@ -35,7 +35,7 @@
                 if(isset($_GET['s'])){
                     $check=$this->model->create($nombre,$serie,$estatus);
                         if($check==true){
-                            header("Location:index.php?c=series&a=view&id=$serie");           
+                            header("Location:".inicio."index.php?c=series&a=view&id=$serie");           
                         }else{
                             header("Location:index.php?c=temporadas&a=create&id=$serie");   
                         }

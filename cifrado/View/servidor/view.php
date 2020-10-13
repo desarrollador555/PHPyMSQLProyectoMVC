@@ -18,7 +18,7 @@
                     <th scope="row">Nombre</th><td><?= $servidor['se_nombre']?></td>
                 </tr>
                 <tr>
-                    <th scope="row">Imagen</th><td><img class="img-thumbnail" style="height: auto; width: 200px;" src="<?= inicio.$servidor['se_dir_imagen']?>" alt="<?= $servidor['se_nombre']?>"></td>
+                    <th scope="row">Imagen</th><td><img class="img-thumbnail" style="height: auto; width: 200px;" src="../<?= $servidor['se_dir_imagen']?>" alt="<?= $servidor['se_nombre']?>"></td>
                 </tr>
             </tbody>
         </table>

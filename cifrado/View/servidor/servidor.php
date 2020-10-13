@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="row"><?= $row['id_servidor']?></th>
                     <td><?= $row['se_nombre']?></td>
-                    <td><img class="img-thumbnail" style="width: 200px;" src="<?= inicio.$row['se_dir_imagen']?>" alt="<?= $row['se_nombre']?>"></td>
+                    <td><img class="img-thumbnail" style="width: 200px;" src="../<?= $row['se_dir_imagen']?>" alt="<?= $row['se_nombre']?>"></td>
                     <td class="acciones">
                         <a href="index.php?c=servidor&a=view&id=<?= $row['id_servidor'] ?>" class="btn btn-primary">Ver</a>
                         <a href="index.php?c=servidor&a=modificar&id=<?=$row['id_servidor'] ?>" class="btn btn-success">Actualizar</a>

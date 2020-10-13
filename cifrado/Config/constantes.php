@@ -1,6 +1,10 @@
 <?php 
     define("Controller","series");
     define("Accion","index");
-    define("inicio","http://localhost/proyectopersonal/");
-    define("carpeta","C:/xampp/htdocs/proyectopersonal/");
+    define("inicio","http://localhost/proyectopersonal/cifrado/");
+    define("carpetafisica","C:/xampp/htdocs/proyectopersonal");
+    $credenciales=[
+        "user"=>"asdqwezxcnnhdas889238unsdc",
+        "contraseña"=>"asdqwezxcnnhdas889238unsdc"
+    ];
 ?>

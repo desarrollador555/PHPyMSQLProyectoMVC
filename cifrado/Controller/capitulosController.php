@@ -35,9 +35,15 @@
                     $temporada);
 
                     if($check==true){
-                        header("Location:index.php?c=temporadas&a=view&id=$temporada");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=temporadas&a=view&id=<?=$temporada?>");</script>
+                <?php
+                        die();
                     }else{
-                        header("Location:index.php?c=capitulos&a=create&id=$temporada");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=capitulos&a=create&id=<?=$temporada?>");</script>
+                <?php
+                        die();
                     }
                 }
                 if(isset($_GET['m'])){
@@ -46,13 +52,22 @@
                     $check=$this->model->update($id,$nombre,$servidor,$url,$urlencriptada,
                     $temporada);
                         if($check==true){
-                            header("Location:index.php?c=temporadas&a=view&id=$temporada");
+                    ?>
+                            <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=temporadas&a=view&id=<?=$temporada?>");</script>
+                    <?php
+                            die();
                         }else{
-                            header("Location:index.php?c=capitulos&a=create");
+                    ?>
+                            <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=capitulos&a=create");</script>
+                    <?php
+                            die();
                         }
                 }
-            }else{
-                header("Location:index.php?c=capitulos&a=create");
+                }else{
+                    ?>
+                            <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=capitulos&a=create");</script>
+                    <?php
+                            die();
             }
         }
         public function modificar(){            
@@ -62,12 +77,16 @@
                 $servidores=$this->model->getFKServidor();
                 $listaTemporadas=$this->model->getFKTemporadas();
                 if(!$capitulos){
-                    header("Location:index.php?c=capitulos&a=index");
+                    ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=capitulos&a=index")</script>
+                    <?php
                 }else{
                     require_once "View/capitulos/edit.php";
                 }
             }else{
-                header("Location:index.php?c=capitulos&a=index");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=capitulos&a=index")</script>
+                <?php
             }
         }
         public function eliminar(){
@@ -76,9 +95,15 @@
             if(!empty($_GET['id'])){
                 $id=$_GET['id'];
                 $this->model->delete($id);
-                header("Location:index.php?c=temporadas&a=view&id=$temporada");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?= inicio?>index.php?c=temporadas&a=view&id=<?=$temporada?>")</script>
+                <?php
+                die();
             }else{
-                header("Location:index.php?c=temporadas&a=view&id=$temporada");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?= inicio?>index.php?c=temporadas&a=view&id=<?=$temporada?>")</script>
+                <?php
+                die();
             }
         }
     }

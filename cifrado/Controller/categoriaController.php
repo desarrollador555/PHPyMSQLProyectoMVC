@@ -23,9 +23,18 @@
             if(!empty($_POST['nombre'])){
                 $nombre=$_POST['nombre'];
                 $this->model->create($nombre);
-                header("Location:index.php?c=categoria&a=index");
+                ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
             }else{
-                header("Location:index.php?c=categoria&a=create");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?= inicio?>c=categoria&a=create")</script>
+                <?php
+                die();
             }
         }
         public function modificar(){
@@ -33,12 +42,24 @@
                 $id=$_GET['id'];
                 $alumno=$this->model->view($id);
                 if(!$alumno){
-                    header("Location:index.php?c=categoria&a=index");
+                    ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
                 }else{
                     require_once "View/categoria/edit.php";
                 }
             }else{
-                header("Location:index.php?c=categoria&a=index");
+                ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
             }
         }
         public function actualizar(){
@@ -47,7 +68,13 @@
                 $nombre=$_POST['nombre'];
                 $check=$this->model->update($id,$nombre);
                 if($check==true){
-                    header("Location:index.php?c=categoria&a=index");
+                    ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
                 }
             }
         }
@@ -55,9 +82,21 @@
             if(!empty($_GET['id'])){
                 $id=$_GET['id'];
                 $this->model->delete($id);
-                header("Location:index.php?c=categoria&a=index");
+                ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
             }else{
-                header("Location:index.php?c=categoria&a=index");
+                ?>
+                    
+                    <script type="text/javascript">
+                        window.location.replace("<?=inicio?>index.php?c=categoria&a=index");
+                    </script>
+                    <?php
+                            die();
             }
         }
     }
