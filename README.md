@@ -32,4 +32,8 @@
 - Para agregar capitulos, se debe ir a ver temporaday agregar capitulos
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/v3.PNG)
 # Vista del usuario
-
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/vu.PNG)
+- Al precionar en una categoria, este filtra el contenido
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/vu2.PNG)
+- Enlaces de descarga al dar click en temporadas
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/vu3.PNG)
