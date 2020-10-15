@@ -18,15 +18,9 @@
 # Vista del administrador
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/INICIO.PNG)
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/2.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/3
-.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/4
-.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/5
-.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/6
-.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/7
-.PNG)
-![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/8
-.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/3.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/4.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/5.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/6.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/7.PNG)
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/8.PNG)
