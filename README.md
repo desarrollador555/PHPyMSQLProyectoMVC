@@ -16,3 +16,4 @@
 - Existe actualmente un error al iniciar sesion, ya que se deben enviar dos veces el formulario.
 
 # Vista del administrador
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/INICIO.PNG)
