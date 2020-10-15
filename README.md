@@ -30,4 +30,6 @@
 - Aqui se agregan las temporadas
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/v2.PNG)
 - Para agregar capitulos, se debe ir a ver temporaday agregar capitulos
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/v3.PNG)
+# Vista del usuario
 
