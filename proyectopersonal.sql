@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2020 a las 03:35:17
+-- Tiempo de generación: 15-10-2020 a las 20:39:52
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.6
 
@@ -36,9 +36,7 @@ CREATE TABLE `capitulos` (
   `c_fk_id_temporada` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `capitulos`
---
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `categoria`
@@ -48,10 +46,6 @@ CREATE TABLE `categoria` (
   `id_categoria` int(11) NOT NULL,
   `ce_nombre` varchar(250) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `categoria`
---
 
 -- --------------------------------------------------------
 
@@ -63,10 +57,6 @@ CREATE TABLE `estatus` (
   `id_estatus` int(11) NOT NULL,
   `e_nombre` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `estatus`
---
 
 -- --------------------------------------------------------
 
@@ -83,10 +73,6 @@ CREATE TABLE `series` (
   `s_fk_id_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `series`
---
-
 -- --------------------------------------------------------
 
 --
@@ -100,10 +86,6 @@ CREATE TABLE `servidor` (
   `se_dir_imagen` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `servidor`
---
-
 -- --------------------------------------------------------
 
 --
@@ -116,10 +98,6 @@ CREATE TABLE `temporadas` (
   `t_fk_id_serie` int(11) NOT NULL,
   `t_fk_id_estatus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `temporadas`
---
 
 --
 -- Índices para tablas volcadas
@@ -174,13 +152,13 @@ ALTER TABLE `temporadas`
 -- AUTO_INCREMENT de la tabla `capitulos`
 --
 ALTER TABLE `capitulos`
-  MODIFY `id_capitulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_capitulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `estatus`
@@ -192,7 +170,7 @@ ALTER TABLE `estatus`
 -- AUTO_INCREMENT de la tabla `series`
 --
 ALTER TABLE `series`
-  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_serie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `servidor`
@@ -204,7 +182,7 @@ ALTER TABLE `servidor`
 -- AUTO_INCREMENT de la tabla `temporadas`
 --
 ALTER TABLE `temporadas`
-  MODIFY `id_temporada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_temporada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas

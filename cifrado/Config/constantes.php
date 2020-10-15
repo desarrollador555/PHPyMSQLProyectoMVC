@@ -3,6 +3,7 @@
     define("Accion","index");
     define("inicio","http://localhost/proyectopersonal/cifrado/");
     define("carpetafisica","C:/xampp/htdocs/proyectopersonal");
+    define("post",4);
     $credenciales=[
         "user"=>"asdqwezxcnnhdas889238unsdc",
         "contraseña"=>"asdqwezxcnnhdas889238unsdc"

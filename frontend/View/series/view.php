@@ -22,14 +22,14 @@
                 </div>
                 
             </div>
-            <div class="card-footer text-muted">
-                2 days ago
+            <div class="mb-4">
+                
             </div>
         </div>
 
     <!--Inicio de apertado de temporadas-->
     
-    <h1 class="title">Lista de temporadas</h1>
+    <h2 class="title mt-4 mb-4">Lista de temporadas</h2>
     <?php foreach($temporadas as $row): ?>
 
         <div id="accordion">
@@ -61,30 +61,5 @@
     <?php endforeach; ?>
 
         <!--Fin de apartado de temporadas-->
-
-        <!-- <table class="table table-striped mb-4">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Serie</th>
-                    <th scope="col">Estatus</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach($temporadas as $row): ?>
-                <tr>
-                    <th scope="row"><?= $row['id_temporada']?></th>
-                    <td><?= $row['t_nombre']?></td>
-                    <td><?= $this->modeltemporadas->getFKnameserie($row['t_fk_id_serie'])?></td>
-                    <td><?= $this->modeltemporadas->getFKnameestatus($row['t_fk_id_estatus'])?></td>
-                    <td class="acciones">
-                        <a href="index.php?c=temporadas&a=view&id=<?= $row['id_temporada'] ?>" class="btn btn-primary">Ver</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table> -->
-
 </div>
+<br>

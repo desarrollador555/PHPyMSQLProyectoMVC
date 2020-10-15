@@ -1,15 +1,25 @@
 <?php
     class estatusController{
         private $model;
-        
+        private $paginacion;
         public function __construct()
-        {
+        {            
             require_once "Model/estatusModel.php";
             $this->model=new estatusModel();
+            require_once "Config/paginacion.php";
+            $this->paginacion=new paginacion();
         }
         public function index(){
-            $estatus=$this->model->index();
+            $post=(!empty($_GET['post']))?(int)$_GET['post']:4;
+            $paginaA=$this->paginacion->obtenerPagina();//necesarios para paginacion numero actual de pagina
+            
+            $inicio=($paginaA>1)?$paginaA*$post-$post:0;
+
+            $estatus=$this->model->index($inicio,$post);
+            $totalRegistros=$this->paginacion->totalRegistros("estatus");//total de registros
+            $totalPaginas=$this->paginacion->numerodepaginas($totalRegistros,$post);
             require_once "View/estatus/estatus.php";
+            require_once "../Asset/paginacion/paginacion.php";
         }
         public function view(){
             $id=$_GET['id'];

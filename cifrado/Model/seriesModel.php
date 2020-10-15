@@ -7,8 +7,9 @@
             require_once "Config/database.php";
             $this->db=database::conexion();
         }
-        public function index(){
-            $statement=$this->db->prepare("SELECT * FROM series");
+        
+        public function index($inicio,$posPagina){
+            $statement=$this->db->prepare("SELECT * FROM series limit $inicio,$posPagina");
             $statement->execute();
             $statement=$statement->fetchAll();
             return $statement;

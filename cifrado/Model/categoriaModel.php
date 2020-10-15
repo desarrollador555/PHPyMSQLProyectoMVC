@@ -7,8 +7,14 @@
             require_once "Config/database.php";
             $this->db=database::conexion();
         }
-        public function index(){
-            $statement=$this->db->prepare("SELECT * FROM categoria");
+        public function index($inicio,$posPagina){
+            if($inicio=="" && $posPagina==""){
+                $statement=$this->db->prepare("SELECT * FROM categoria");
+                $statement->execute();
+                $statement=$statement->fetchAll();
+                return $statement;
+            }
+            $statement=$this->db->prepare("SELECT * FROM categoria limit $inicio,$posPagina");
             $statement->execute();
             $statement=$statement->fetchAll();
             return $statement;

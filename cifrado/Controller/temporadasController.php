@@ -35,9 +35,15 @@
                 if(isset($_GET['s'])){
                     $check=$this->model->create($nombre,$serie,$estatus);
                         if($check==true){
-                            header("Location:".inicio."index.php?c=series&a=view&id=$serie");           
+                            ?>
+                                <script type="text/javascript"> window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$serie?>");</script>
+                            <?php
+                            die();
                         }else{
-                            header("Location:index.php?c=temporadas&a=create&id=$serie");   
+                            ?>
+                            <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=temporadas&a=create&id=<?=$serie?>");</script>
+                            <?php
+                            die();
                         }
                 }
                 if(isset($_GET['m'])){
@@ -48,13 +54,22 @@
                     
                     $check=$this->model->update($id,$nombre,$serie,$estatus);
                         if($check==true){
-                            header("Location:index.php?c=series&a=view&id=$serie");          
+                            ?>
+                            <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$serie?>");</script>
+                            <?php
+                            die();
                         }else{
-                            header("Location:index.php?c=temporadas&a=modificar&id=$id");   
+                            ?>
+                                <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=temporadas&a=modificar&id=<?=$id?>");</script>
+                            <?php
+                            die();
                         }
                 }
             }else{
-                header("Location:index.php?c=temporadas&a=create");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=temporadas&a=create");</script>
+                <?php
+                die();
             }
         }
         public function modificar(){
@@ -65,12 +80,19 @@
                 $temporadas=$this->model->view($id);
                 // print_r($temporadas);
                 if(!$temporadas){
-                    header("Location:index.php?c=series&a=view&id=$id");
+                    ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$id?>");</script>
+                    <?php
+                    die();
                 }else{
                     require_once "View/temporadas/edit.php";
                 }
             }else{
-                header("Location:index.php?c=series&a=view&id=$id");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$id?>");</script>
+                    <?php
+                    die();
+
             }
         }
         public function eliminar(){
@@ -78,9 +100,15 @@
             if(!empty($_GET['id'])){
                 $id=$_GET['id'];
                 $this->model->delete($id);
-                header("Location:index.php?c=series&a=view&id=$idserie");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$idserie?>")</script>
+                <?php
+                die();
             }else{
-                header("Location:index.php?c=series&a=view&id=$idserie");
+                ?>
+                    <script type="text/javascript">window.location.replace("<?=inicio?>index.php?c=series&a=view&id=<?=$idserie?>")</script>
+                <?php
+                die();
             }
         }
     }

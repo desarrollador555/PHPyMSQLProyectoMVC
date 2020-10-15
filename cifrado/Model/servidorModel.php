@@ -7,8 +7,14 @@
             require_once "Config/database.php";
             $this->db=database::conexion();
         }
-        public function index(){
-            $statement=$this->db->prepare("SELECT * FROM servidor");
+        public function index($inicio,$post){
+            if($inicio=="" && $post==""){
+                $statement=$this->db->prepare("SELECT * FROM servidor");
+                $statement->execute();
+                $statement=$statement->fetchAll();
+                return $statement;
+            }
+            $statement=$this->db->prepare("SELECT * FROM servidor LIMIT $inicio,$post");
             $statement->execute();
             $statement=$statement->fetchAll();
             return $statement;

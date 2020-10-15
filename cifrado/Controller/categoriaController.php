@@ -1,15 +1,29 @@
 <?php
     class categoriaController{
         private $model;
-        
+        private $paginacion;
         public function __construct()
         {
             require_once "Model/categoriaModel.php";
             $this->model=new categoriaModel();
+            
+            require_once "Config/paginacion.php";
+            $this->paginacion=new paginacion();
         }
         public function index(){
-            $categorias=$this->model->index();
+
+            $post=(!empty($_GET['post']))?(int)$_GET['post']:4;
+            
+            $paginaA=$this->paginacion->obtenerPagina();//necesarios para paginacion numero actual de pagina
+
+            $inicio= ($paginaA>1) ? ($paginaA * $post) - $post:0;
+
+            $categorias=$this->model->index($inicio,$post);
+            
+            $totalRegistros=$this->paginacion->totalRegistros("categoria");//total de registros
+            $totalPaginas=$this->paginacion->numerodepaginas($totalRegistros,$post);
             require_once "View/categoria/categoria.php";
+            require_once "../Asset/paginacion/paginacion.php";
         }
         public function view(){
             $id=$_GET['id'];

@@ -6,7 +6,19 @@
             require_once "Config/database.php";
             $this->db=database::conexion();
         }
-        public function index(){
+        public function index($categoria){
+
+            if($categoria!=""){
+                $statement=$this->db->prepare("SELECT * FROM series where s_fk_id_categoria =:s_fk_id_categoria");
+                $statement->execute(
+                    array(
+                        ":s_fk_id_categoria"=>$categoria
+                    )
+                );
+                $statement=$statement->fetchAll();
+                return $statement;
+            }
+            
             $statement=$this->db->prepare("SELECT * FROM series");
             $statement->execute();
             $statement=$statement->fetchAll();

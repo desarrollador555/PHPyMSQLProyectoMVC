@@ -66,14 +66,14 @@
             );
         }
         public function getFKSeries(){
-            return $this->series->index();
+            return $this->series->index("","");
         }
         public function getFKnameserie($id){
             $dato = $this->series->view($id);
             return $dato['s_nombre'];
         }
         public function getFKEstatus(){
-            return $this->estatus->index();
+            return $this->estatus->index("","");
         }
         public function getFKnameestatus($id){
             $dato = $this->estatus->view($id);

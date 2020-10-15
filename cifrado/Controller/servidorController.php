@@ -1,15 +1,26 @@
 <?php
     class servidorController{
         private $model;
-        
+        private $paginacion;        
         public function __construct()
         {
             require_once "Model/servidorModel.php";
             $this->model=new servidorModel();
+            
+            require_once "Config/paginacion.php";
+            $this->paginacion=new paginacion();
         }
         public function index(){
-            $servidor=$this->model->index();
+            $post=(!empty($_GET['post']))?(int)$_GET['post']:4;
+            $paginaA=$this->paginacion->obtenerPagina();//necesarios para paginacion numero actual de pagina
+            
+            $inicio=($paginaA>1)?$paginaA*$post-$post:0;
+
+            $servidor=$this->model->index($inicio,$post);
+            $totalRegistros=$this->paginacion->totalRegistros("servidor");//total de registros
+            $totalPaginas=$this->paginacion->numerodepaginas($totalRegistros,$post);
             require_once "View/servidor/servidor.php";
+            require_once "../Asset/paginacion/paginacion.php";
         }
         public function view(){
             $id=$_GET['id'];

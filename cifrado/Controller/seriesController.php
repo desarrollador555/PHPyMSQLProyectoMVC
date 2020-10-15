@@ -3,8 +3,12 @@
         private $model;
         private $modelcategoria;
         private $modeltemporadas;
+        private $paginacion;
         public function __construct()
         {
+            require_once "Config/paginacion.php";
+            $this->paginacion=new paginacion();
+
             require_once "Model/temporadasModel.php";
             $this->modeltemporadas=new temporadasModel();
 
@@ -14,10 +18,18 @@
             require_once "Model/seriesModel.php";
             $this->model=new seriesModel();
         }
+
         public function index(){
-            $series=$this->model->index();
             
+            $post=(!empty($_GET['post']))?(int)$_GET['post']:4;
+            $paginaA=$this->paginacion->obtenerPagina();//necesarios para paginacion numero actual de pagina
+            $inicio=($paginaA>1)?$paginaA*$post-$post:0;
+
+            $series=$this->model->index($inicio,$post);
+            $totalRegistros=$this->paginacion->totalRegistros("series");//total de registros
+            $totalPaginas=$this->paginacion->numerodepaginas($totalRegistros,$post);
             require_once "View/series/series.php";
+            require_once "../Asset/paginacion/paginacion.php";
         }
         public function view(){
 
@@ -28,7 +40,7 @@
             require_once "View/series/view.php";
         }
         public function create(){
-            $categorias=$this->modelcategoria->index();
+            $categorias=$this->modelcategoria->index("","");
             require_once "View/series/create.php";
         }
         public function preparar(){
@@ -118,7 +130,7 @@
             if(!empty($_GET['id'])){
                 $id=$_GET['id'];
                 $serie=$this->model->view($id);//traer los datos y mostrarlos en el formulario de edicion
-                $categorias=$this->modelcategoria->index();//traer el listado
+                $categorias=$this->modelcategoria->index("","");//traer el listado
                 if(!$serie){
                     ?>
                     
