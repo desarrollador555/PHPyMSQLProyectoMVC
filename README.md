@@ -24,3 +24,10 @@
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/6.PNG)
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/7.PNG)
 ![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/8.PNG)
+
+- Al dar clic en ver, se desplegara lo siguiente
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/v1.PNG)
+- Aqui se agregan las temporadas
+![](https://raw.githubusercontent.com/desarrollador555/IMAGENES_/main/v2.PNG)
+- Para agregar capitulos, se debe ir a ver temporaday agregar capitulos
+
